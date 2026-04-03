@@ -397,19 +397,12 @@ Contributions are welcome! Please follow these guidelines:
 
 ---
 
-## License
-
-This project is provided as-is for educational purposes. Please refer to the LICENSE file for more information.
-
----
-
 ## Quick Start Checklist
 
 - [ ] Install Python 3.10+
 - [ ] Install Node.js 16+
-- [ ] Install MongoDB
 - [ ] Clone repository
-- [ ] Create `.env` file with Google API key
+- [ ] Create `.env` file with Google API key and MongoDB URI
 - [ ] Install backend dependencies: `pip install -r requirements.txt`
 - [ ] Install frontend dependencies: `npm install`
 - [ ] Start backend: `python main.py`
