@@ -2,6 +2,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import datetime
+from datetime import timedelta 
 
 from gemini_client import analyze_symptoms_with_gemini
 from database import history_collection  # <-- This fixes your NameError
@@ -55,6 +56,8 @@ async def check_symptoms(request: SymptomRequest):
 def read_root():
     return {"status": "API is running"}
 
+from datetime import timedelta # Add this import at the top
+
 @app.get("/api/history/{session_id}")
 def get_history(session_id: str):
     # Fetch the history for this specific user, sorted by newest first
@@ -62,9 +65,12 @@ def get_history(session_id: str):
     
     history_list = []
     for record in records:
+        # Add 5 hours and 30 minutes to the UTC timestamp from MongoDB
+        ist_time = record["timestamp"] + timedelta(hours=5, minutes=30)
+        
         history_list.append({
             "id": str(record["_id"]), 
-            "timestamp": record["timestamp"],
+            "timestamp": ist_time, 
             "symptoms": record["symptoms_text"],
             "response": record["llm_response"]
         })

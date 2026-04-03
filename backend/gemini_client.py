@@ -14,11 +14,22 @@ Rules:
 1. You must include a prominent educational disclaimer.
 2. Keep the tone objective, cautious, and strictly educational.
 3. Do not attempt to provide a definitive diagnosis.
-4. Always respond strictly in valid JSON format matching this exact schema:
+4. Assess the general severity of the described symptoms (Low, Medium, High, or Emergency).
+5. Always respond strictly in valid JSON format matching this exact schema:
 {
   "disclaimer": "Educational use only disclaimer text here.",
+  "severity": "Low",
   "probable_conditions": ["Condition 1", "Condition 2"],
-  "next_steps": ["Step 1", "Step 2"]
+  "next_steps": ["Step 1", "Step 2"],
+  "questions_for_doctor": ["Question 1", "Question 2"]
+}
+6. If the user's input is not related to human health or symptoms (e.g., coding questions, general trivia, gibberish), return this exact JSON:
+{
+  "disclaimer": "Invalid query.",
+  "severity": "None",
+  "probable_conditions": ["Non-medical query detected."],
+  "next_steps": ["Please enter actual physical or mental health symptoms."],
+  "questions_for_doctor": []
 }
 """
 
