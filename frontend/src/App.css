@@ -1,0 +1,17 @@
+body {
+  background-color: #f0f4f8; /* Soft, clean medical blue/gray */
+  color: #333333;
+  margin: 0;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Ensure the textarea has a white background and dark text */
+textarea {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+textarea::placeholder {
+  color: #888888;
+}
