@@ -42,7 +42,6 @@ The backend tracks user sessions and maintains conversation history to provide c
 
 - 🔍 **AI-Powered Analysis**: Uses Google Gemini API to analyze symptoms and suggest probable conditions
 - 📊 **Severity Assessment**: Evaluates symptom severity (Low, Medium, High, Emergency)
-- 🧠 **Context-Aware**: Maintains conversation history for personalized analysis
 - 📱 **Responsive UI**: React-based frontend with intuitive tab-based navigation
 - 🔐 **Session Management**: Tracks user sessions for persistent history
 - 💾 **MongoDB Integration**: Stores user interactions and historical data
